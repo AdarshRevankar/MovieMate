@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Root -->
+    <dimen name="margin_left">24dp</dimen>
+    <dimen name="margin_right">24dp</dimen>
+    <dimen name="margin_top">24dp</dimen>
+    <dimen name="margin_bottom">24dp</dimen>
+
+    <dimen name="text_xsmall">10sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_normal">14sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xlarge">24sp</dimen>
+    <dimen name="text_extra_large">32sp</dimen>
+</resources>

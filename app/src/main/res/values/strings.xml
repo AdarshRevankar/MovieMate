@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MovieMate</string>
+
+    <string name="login_title">MovieMate</string>
+    <string name="login_subtitle">Login now</string>
+    <string name="carousal_subtitle">Find movies</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="user_name">User Name</string>
+    <string name="invalid_credential">User ID or Password is invalid !</string>
+    <string name="error_message">Something went wrong</string>
+    <string name="title_overview">Overview</string>
+    <string name="content_overview">NA</string>
+    <string name="title_rating">Rating</string>
+    <string name="title_rating_count">Vote Count</string>
+    <string name="title_launch_date">Launch Date</string>
+    <string name="network_error">Sorry… Network is broken</string>
+    <string name="retry">Retry</string>
+</resources>

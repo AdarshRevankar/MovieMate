@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        tools:context=".review.MovieReviewActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.075" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.925" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontalBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/margin_bottom" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/LoginTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toStartOf="@+id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@+id/glVerticalLeft"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_max="@dimen/max_element_width" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTitle"
+            style="@style/LoginSubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/carousal_subtitle"
+            app:layout_constraintEnd_toStartOf="@+id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@+id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintWidth_max="@dimen/max_element_width" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_top"
+            app:layout_constraintBottom_toBottomOf="@+id/glHorizontalBottom"
+            app:layout_constraintEnd_toStartOf="@+id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@+id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/dots" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/bottom_gradient" />
+
+                <Space
+                    android:id="@+id/spacer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitleOverview"
+                    style="@style/TextReviewTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_overview"
+                    app:layout_constraintTop_toBottomOf="@+id/spacer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvContentOverview"
+                    style="@style/TextReviewContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/content_overview"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleOverview" />
+
+                <Space
+                    android:id="@+id/spacer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/tvContentOverview" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoteCountTitle"
+                    style="@style/TextReviewTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_rating_count"
+                    app:layout_constraintTop_toBottomOf="@+id/spacer1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoteCount"
+                    style="@style/TextReviewContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/content_overview"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVoteCountTitle" />
+
+                <Space
+                    android:id="@+id/spacer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVoteCount" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLaunchDateTitle"
+                    style="@style/TextReviewTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_launch_date"
+                    app:layout_constraintTop_toBottomOf="@+id/spacer2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLaunchDate"
+                    style="@style/TextReviewContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/content_overview"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLaunchDateTitle" />
+
+                <Space
+                    android:id="@+id/spacer3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLaunchDate" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

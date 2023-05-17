@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".carousal.CarousalActivity">
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:padding="3dp"
+            android:text="@string/error_message"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.075" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.925" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontalTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontalBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/margin_bottom" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/LoginTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toStartOf="@+id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@+id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@id/glHorizontalTop"
+            app:layout_constraintWidth_max="@dimen/max_element_width" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTitle"
+            style="@style/LoginSubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/carousal_subtitle"
+            app:layout_constraintEnd_toStartOf="@+id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@+id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintWidth_max="@dimen/max_element_width" />
+
+        <Space
+            android:id="@+id/spacer"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/rvMovies"
+            app:layout_constraintEnd_toStartOf="@+id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBroken"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@id/spacer"
+            app:srcCompat="@drawable/sad_cloud" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBroken"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:text="@string/network_error"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/btnBroken"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/ivBroken" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBroken"
+            style="@style/GenericButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="@string/retry"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/glHorizontalBottom"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@id/glVerticalLeft" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMovies"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/glHorizontalBottom"
+            app:layout_constraintEnd_toStartOf="@id/glVerticalRight"
+            app:layout_constraintStart_toEndOf="@id/glVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@id/spacer"
+            tools:listitem="@layout/item_movies" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
