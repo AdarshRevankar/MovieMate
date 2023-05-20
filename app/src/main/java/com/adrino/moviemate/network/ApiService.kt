@@ -14,7 +14,6 @@ interface ApiService {
     @GET("3/tv/popular")
     fun getMovies(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String?,
-        @Query("language") page: Int?
+        @Query("language") language: String?
     ): Flowable<TMDBResponse>
 }

@@ -20,8 +20,7 @@ class CarousalPresenterImpl(
             FETCH_MOVIES,
             RetrofitClient.instance?.getMovieMateRepository()?.getMovies(
                 BuildConfig.API_KEY,
-                LANGUAGE,
-                1
+                LANGUAGE
             ), this
         )
     }
